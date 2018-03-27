@@ -1,12 +1,17 @@
 (ns property-based-testing-intro.simple-test
   (:require [clojure.test :refer :all]
-            [property-based-testing-intro.simple :refer :all]))
+            [property-based-testing-intro.simple :refer :all]
+            [clojure.test.check :as tc]
+            [clojure.test.check.clojure-test :refer [defspec]]
+            [clojure.test.check.generators :as gen]
+            [clojure.test.check.properties :as prop]))
 
-(deftest a-test
-  (testing "I'm a test"
-    (is (= 0 1))))
+;unit test
 
-(deftest add-test
-  (testing "1+1=2"
-    (is (= 2 (add 1 1)))))
+;input generation
+
+;defspec
+
+;shrinking, quick-check and results
+
 
