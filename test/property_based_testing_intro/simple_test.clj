@@ -17,21 +17,22 @@
   (testing "0+1=1"
     (is (= 1 (add 0 1)))))
 
-(defn gen-int [] (gen/generate gen/int))
 
 ;input generation
+(defn generate-int [] (gen/generate gen/int))
+
 (deftest add-property-test
   (testing "When I add two numbers, the result should not depend on parameter order"
-    (let [x (gen-int)
-          y (gen-int)]
+    (let [x (generate-int)
+          y (generate-int)]
       (is (= (add x y) (add y x)))))
 
   (testing "Adding 1 twice is the same as adding 2"
-    (let [x (gen-int)]
+    (let [x (generate-int)]
       (is (= (add 1 (add 1 x)) (add 2 x)))))
 
   (testing "Adding zero is the same as doing nothing"
-    (let [x (gen-int)]
+    (let [x (generate-int)]
       (is (= x (add 0 x))))))
 
 ;defspec
